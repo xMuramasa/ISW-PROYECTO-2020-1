@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -39,18 +37,6 @@ public class medico{
 
     @Column(name="Ocupado")
     Boolean ocupado;
-
-    @ManyToOne
-    @JoinColumn(name="pabellonId", nullable=false)
-    pabellon pabellon;
-
-    @ManyToOne
-    @JoinColumn(name = "quimioterapiaId", nullable=false)
-    quimioterapia quimioterapia;
-    
-    @ManyToOne
-    @JoinColumn(name = "recuperacionId", nullable=false)
-    recuperacion recuperacion;
 
     public medico(){
 
@@ -106,29 +92,4 @@ public class medico{
     public void setOcupado(Boolean ocupado){
         this.ocupado = ocupado;
     }
-
-    public void setrecupercion(recuperacion recuperacion) {
-        this.recuperacion = recuperacion;
-    }
-
-    public recuperacion getRecuperacion() {
-        return this.recuperacion;
-    }
-
-    public void setQumioterapia(quimioterapia quimioterapia) {
-        this.quimioterapia = quimioterapia;
-    }
-
-    public quimioterapia getQumioterapia() {
-        return this.quimioterapia;
-    }
-
-    public void setPabellon(pabellon pabellon) {
-        this.pabellon = pabellon;
-    }
-
-    public pabellon getPabellon() {
-        return this.pabellon;
-    }
-
 }

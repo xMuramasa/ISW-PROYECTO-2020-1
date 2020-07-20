@@ -50,8 +50,8 @@ public class quimioterapiaController {
         return servicio.borrar(id);
     }
 
-    @GetMapping("/medico")
-    public List<medico> obtenerByquimioterapia(@RequestParam(name = "medico", required = true) int id) {
+    @GetMapping("/getAllQuimioterapia")
+    public List<quimioterapia> obtenerByquimioterapia(@RequestParam(name = "medico", required = true) int id) {
         return servicio.obtenerByquimioterapia(id);
     }
 

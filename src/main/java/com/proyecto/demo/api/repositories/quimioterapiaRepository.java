@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.proyecto.demo.api.models.quimioterapia;
-import com.proyecto.demo.api.models.medico;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -14,6 +13,6 @@ public interface quimioterapiaRepository extends JpaRepository<quimioterapia, Se
 
     public abstract quimioterapia findByquimioterapiaId(int quimioterapiaId);
 
-    public abstract List<medico> findAllByquimioterapiaId(int quimioterapiaId);
+    public abstract List<quimioterapia> findAllByquimioterapiaId(int quimioterapiaId);
 
 }

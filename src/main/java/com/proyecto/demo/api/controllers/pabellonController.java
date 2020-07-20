@@ -50,8 +50,8 @@ public class pabellonController {
         return servicio.borrar(id);
     }
 
-    @GetMapping("/medico")
-    public List<medico> obtenerByPabellon(@RequestParam(name = "medico", required = true) int id) {
+    @GetMapping("/getAllPabellon")
+    public List<pabellon> obtenerByPabellon(@RequestParam(name = "medico", required = true) int id) {
         return servicio.obtenerByPabellon(id);
     }
 

@@ -1,13 +1,10 @@
 package com.proyecto.demo.api.models;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -23,17 +20,17 @@ public class pabellon{
     @Column(name="pabellonId")
     int pabellonId;
 
-    @OneToMany(mappedBy = "medicoId")
-    private Set<medico> medico;
+    @Column(name="medicoId")
+    int medicoId;
 
     public pabellon(){
         
     }
 
-    public pabellon(int id, int pabellonId, Set<medico> medico) {
+    public pabellon(int id, int pabellonId, int medicoId) {
         this.id = id;
         this.pabellonId = pabellonId;
-        this.medico = medico;
+        this.medicoId = medicoId;
         
     }
     public int getId() {
@@ -44,19 +41,19 @@ public class pabellon{
         this.id = id;
     }
 
-    public int getIdPabellon() {
+    public int getIpabellonId() {
         return this.pabellonId;
     }
 
-    public void setIdPabellon(int pabellonId) {
+    public void setpabellonId(int pabellonId) {
         this.pabellonId = pabellonId;
     }
 
-    public Set<medico> getMedico(){
-        return this.medico;
+    public int getmedicoId(){
+        return this.medicoId;
     }
-    public void setMedico(Set<medico> medico){
-        this.medico = medico;
+    public void setmedicoId(int medicoId){
+        this.medicoId = medicoId;
     } 
 
 }

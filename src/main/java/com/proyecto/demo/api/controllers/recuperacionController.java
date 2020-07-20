@@ -50,8 +50,8 @@ public class recuperacionController {
         return servicio.borrar(id);
     }
 
-    @GetMapping("/medico")
-    public List<medico> obtenerByrecuperacion(@RequestParam(name = "medico", required = true) int id) {
+    @GetMapping("/getAllRecuperacion")
+    public List<recuperacion> obtenerByrecuperacion(@RequestParam(name = "medico", required = true) int id) {
         return servicio.obtenerByrecuperacion(id);
     }
 
