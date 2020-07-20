@@ -11,9 +11,9 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="Jugador")
+@Table(name="Pabellon")
 @Entity
-public class Jugador{
+public class pabellon{
     @Id
     @GenericGenerator(name="incrementrelpab", strategy="increment")
     @GeneratedValue(generator="incrementrelpab")
@@ -26,11 +26,11 @@ public class Jugador{
     @OneToMany(mappedBy = "id_pabellon")
     private Set<medico> medicos;
 
-    public jugador(){
+    public pabellon(){
 
     }
 
-    public jugador(long id, long id_pabellon, Set<medico> medicos) {
+    public pabellon(long id, long id_pabellon, Set<medico> medicos) {
         this.id = id;
         this.id_pabellon = id_pabellon;
         this.medicos = medicos;
