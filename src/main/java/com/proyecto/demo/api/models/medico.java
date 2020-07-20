@@ -4,7 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.proyecto.demo.api.models.pabellon;
+import com.proyecto.demo.api.models.quimioterapia;
+import com.proyecto.demo.api.models.recuperacion;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -37,6 +43,18 @@ public class medico{
 
     @Column(name="Ocupado")
     Boolean ocupado;
+
+    @ManyToOne
+    @JoinColumn(name="pabellon", nullable=false)
+    pabellon pabellon;
+
+    @ManyToOne
+    @JoinColumn(name = "quimioterapia", nullable=false)
+    quimioterapia quimioterapia;
+    
+    @ManyToOne
+    @JoinColumn(name = "recuperacion", nullable=false)
+    recuperacion recuperacion;
 
     public medico(){
 

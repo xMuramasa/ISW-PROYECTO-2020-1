@@ -27,7 +27,7 @@ public class pabellon{
     private Set<medico> medicos;
 
     public pabellon(){
-
+        
     }
 
     public pabellon(long id, long id_pabellon, Set<medico> medicos) {
