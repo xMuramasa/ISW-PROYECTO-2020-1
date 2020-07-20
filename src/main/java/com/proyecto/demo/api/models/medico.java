@@ -57,8 +57,8 @@ public class medico{
 
     }
 
-    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, boolean ocupado) {
-        this.medicoId = id;
+    public medico(int medicoId, String nombres, String apellidos, String rut, String numero, String cargo, String correo, boolean ocupado) {
+        this.medicoId = medicoId;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.rut = rut;
