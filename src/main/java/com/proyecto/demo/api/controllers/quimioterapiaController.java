@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.proyecto.demo.api.models.medico;
 import com.proyecto.demo.api.models.quimioterapia;
 import com.proyecto.demo.api.services.quimioterapiaService;
 

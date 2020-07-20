@@ -3,7 +3,6 @@ package com.proyecto.demo.api.services;
 import java.util.List;
 
 import com.proyecto.demo.api.models.recuperacion;
-import com.proyecto.demo.api.models.medico;
 import com.proyecto.demo.api.repositories.recuperacionRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
