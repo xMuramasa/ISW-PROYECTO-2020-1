@@ -35,7 +35,7 @@ public class medico{
     @Column(name="correo")
     String correo;
 
-    @Column(name="Ocupado")
+    @Column(name="ocupado")
     Boolean ocupado;
 
     public medico(){
@@ -86,10 +86,10 @@ public class medico{
     public void setCargo(String cargo){
         this.cargo = cargo;
     }
-    public boolean getOcupado(){
+    public boolean getocupado(){
         return this.ocupado;
     }
-    public void setOcupado(Boolean ocupado){
+    public void setocupado(Boolean ocupado){
         this.ocupado = ocupado;
     }
 }

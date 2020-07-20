@@ -52,7 +52,7 @@ public class pabellonController {
 
     @GetMapping("/getAllPabellon")
     public List<pabellon> obtenerByPabellon(@RequestParam(name = "medico", required = true) int id) {
-        return servicio.obtenerByPabellon(id);
+        return servicio.obtenerBypabellonId(id);
     }
 
 }

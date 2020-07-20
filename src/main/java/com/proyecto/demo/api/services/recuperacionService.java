@@ -49,7 +49,7 @@ public class recuperacionService {
         return repositorio.findByrecuperacionId(id);
     }
 
-    public List<recuperacion> obtenerByrecuperacion(int id) {
+    public List<recuperacion> obtenerByrecuperacionId(int id) {
         return repositorio.findAllByrecuperacionId(id);
     }
 }

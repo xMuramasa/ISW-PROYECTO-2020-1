@@ -49,7 +49,7 @@ public class quimioterapiaService {
         return repositorio.findByquimioterapiaId(id);
     }
 
-    public List<quimioterapia> obtenerByquimioterapia(int id) {
+    public List<quimioterapia> obtenerByquimioterapiaId(int id) {
         return repositorio.findAllByquimioterapiaId(id);
     }
 }

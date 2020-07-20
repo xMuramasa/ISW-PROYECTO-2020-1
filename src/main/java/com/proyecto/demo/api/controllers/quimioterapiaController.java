@@ -52,7 +52,7 @@ public class quimioterapiaController {
 
     @GetMapping("/getAllQuimioterapia")
     public List<quimioterapia> obtenerByquimioterapia(@RequestParam(name = "medico", required = true) int id) {
-        return servicio.obtenerByquimioterapia(id);
+        return servicio.obtenerByquimioterapiaId(id);
     }
 
 }

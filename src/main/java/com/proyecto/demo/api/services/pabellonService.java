@@ -49,7 +49,7 @@ public class pabellonService{
         return repositorio.findBypabellonId(id);
     }
 
-    public List<pabellon> obtenerByPabellon(int id){
+    public List<pabellon> obtenerBypabellonId(int id){
         return repositorio.findAllBypabellonId(id);
     }
 }
