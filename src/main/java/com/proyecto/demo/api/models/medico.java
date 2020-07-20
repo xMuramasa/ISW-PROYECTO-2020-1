@@ -52,22 +52,6 @@ public class medico{
     @JoinColumn(name = "recuperacionId", nullable=false)
     recuperacion recuperacion;
 
-
-    public medico(){
-
-    }
-
-    public medico(int medicoId, String nombres, String apellidos, String rut, String numero, String cargo, String correo, boolean ocupado) {
-        this.medicoId = medicoId;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.rut = rut;
-        this.numero = numero;
-        this.cargo = cargo;
-        this.correo = correo;
-        this.ocupado = ocupado;
-        }
-
     public int getId() {
         return this.medicoId;
     }
