@@ -52,6 +52,10 @@ public class medico{
     @JoinColumn(name = "recuperacionId", nullable=false)
     recuperacion recuperacion;
 
+    public medico(){
+
+    }
+
     public int getId() {
         return this.medicoId;
     }
