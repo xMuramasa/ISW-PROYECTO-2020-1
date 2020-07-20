@@ -56,11 +56,12 @@ public class medico{
     @JoinColumn(name = "recuperacion", nullable=false)
     recuperacion recuperacion;
 
+
     public medico(){
 
     }
 
-    public medico(long id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado) {
+    public medico(long id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado, pabellon pabellon, quimioterapia quimioterapia, recuperacion recuperacion) {
         this.id_medico = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -69,6 +70,11 @@ public class medico{
         this.cargo = cargo;
         this.correo = correo;
         this.ocupado = ocupado;
+
+        this.recuperacion = recuperacion;        
+        this.quimioterapia =quimioterapia;
+        this.pabellon= pabellon;
+
     }
 
     public long getId() {
@@ -120,6 +126,30 @@ public class medico{
     }
     public void setOcupado(Boolean ocupado){
         this.ocupado = ocupado;
+    }
+
+    public void setrecupercion(recuperacion recuperacion) {
+        this.recuperacion = recuperacion;
+    }
+
+    public recuperacion getRecuperacion() {
+        return this.recuperacion;
+    }
+
+    public void setQumioterapia(quimioterapia quimioterapia) {
+        this.quimioterapia = quimioterapia;
+    }
+
+    public quimioterapia getQumioterapia() {
+        return this.quimioterapia;
+    }
+
+    public void setPabellon(pabellon pabellon) {
+        this.pabellon = pabellon;
+    }
+
+    public pabellon getPabellon() {
+        return this.pabellon;
     }
 
 }
