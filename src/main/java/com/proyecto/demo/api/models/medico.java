@@ -57,7 +57,7 @@ public class medico{
 
     }
 
-    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado) {
+    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, boolean ocupado) {
         this.medicoId = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -112,7 +112,7 @@ public class medico{
     public void setCargo(String cargo){
         this.cargo = cargo;
     }
-    public Boolean getOcupado(){
+    public boolean getOcupado(){
         return this.ocupado;
     }
     public void setOcupado(Boolean ocupado){
