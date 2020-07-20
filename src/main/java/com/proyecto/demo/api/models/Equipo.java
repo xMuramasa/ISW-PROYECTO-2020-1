@@ -6,38 +6,49 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="EQUIPO")
+@Table(name="MEDICO")
 @Entity
-public class Equipo{
+public class Medico{
     @Id
-    @GenericGenerator(name="incrementequipo", strategy="increment")
-    @GeneratedValue(generator="incrementequipo")
-    @Column(name="id_equipo")
+    @GenericGenerator(name="incrementmedico", strategy="increment")
+    @GeneratedValue(generator="incrementmedico")
+    @Column(name="id_medico")
     long id;
     
     @Column(name="nombre")
     String nombre;
 
-    @Column(name="pais")
-    String pais;
+    @Column(name="rut")
+    String rut;
 
-    @OneToMany(mappedBy = "equipo")
-    private Set<Jugador> jugadores;
+    @Column(name="numero")
+    String numero;
 
-    public Equipo(){
+    @Column(name="cargo")
+    String cargo;
+    
+    @Column(name="correo")
+    String correo;
+
+    @Column(name="Ocupado")
+    Boolean ocupado;
+
+    public Medico(){
 
     }
 
-    public Equipo(long id, String nombre, String pais, Set<Jugador> jugadores) {
+    public Medico(long id, String nombre, String rut, String numero, String cargo, String correo, Boolean ocupado) {
         this.id = id;
         this.nombre = nombre;
-        this.pais = pais;
-        this.jugadores = jugadores;
+        this.rut = rut;
+        this.numero = numero;
+        this.cargo = cargo;
+        this.correo = correo;
+        this.ocupado = ocupado;
     }
 
     public long getId() {
@@ -56,20 +67,32 @@ public class Equipo{
         this.nombre = nombre;
     }
 
-    public String getPais() {
-        return this.pais;
+    public String getRut() {
+        return this.rut;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
-    public Set<Jugador> getJugadores() {
-        return this.jugadores;
+    public String getNumero() {
+        return this.numero;
     }
 
-    public void setJugadores(Set<Jugador> jugadores) {
-        this.jugadores = jugadores;
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+    public String getCargo(){
+        return this.cargo;
+    }
+    public void setCargo(String cargo){
+        this.cargo = cargo;
+    }
+    public Boolean getOcupado(){
+        return this.ocupado;
+    }
+    public void setOcupado(Boolean ocupado){
+        this.ocupado = ocupado;
     }
 
 }
