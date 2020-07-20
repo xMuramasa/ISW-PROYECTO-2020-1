@@ -12,15 +12,24 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Table(name="MEDICO")
 @Entity
-public class Medico{
+public class medico{
     @Id
     @GenericGenerator(name="incrementmedico", strategy="increment")
     @GeneratedValue(generator="incrementmedico")
     @Column(name="id_medico")
-    long id;
+    long id_medico;
     
-    @Column(name="nombre")
-    String nombre;
+    @Column(name="nombre1")
+    String nombre1;
+
+    @Column(name="nombre2")
+    String nombre2;
+
+    @Column(name="apellido1")
+    String apellido1;
+
+    @Column(name="apellido2")
+    String apellido2;
 
     @Column(name="rut")
     String rut;
@@ -41,7 +50,7 @@ public class Medico{
 
     }
 
-    public medico(long id, String nombre, String rut, String numero, String cargo, String correo, Boolean ocupado) {
+    public medico(long id, String nombre1, String nombre2, String apellido1, String apellido2, String rut, String numero, String cargo, String correo, Boolean ocupado) {
         this.id = id;
         this.nombre = nombre;
         this.rut = rut;
