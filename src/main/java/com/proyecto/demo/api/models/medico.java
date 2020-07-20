@@ -37,11 +37,11 @@ public class Medico{
     @Column(name="Ocupado")
     Boolean ocupado;
 
-    public Medico(){
+    public medico(){
 
     }
 
-    public Medico(long id, String nombre, String rut, String numero, String cargo, String correo, Boolean ocupado) {
+    public medico(long id, String nombre, String rut, String numero, String cargo, String correo, Boolean ocupado) {
         this.id = id;
         this.nombre = nombre;
         this.rut = rut;
