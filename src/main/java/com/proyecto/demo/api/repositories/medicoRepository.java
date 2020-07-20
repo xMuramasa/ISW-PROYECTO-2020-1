@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository("repositorymedico")
 public interface medicoRepository extends JpaRepository<medico, Serializable>{
     
-    public abstract medico findByIdMedico(long id_medico);
+    public abstract medico findBymedicoId(int medicoId);
 
     public abstract List<medico> findAll();
 

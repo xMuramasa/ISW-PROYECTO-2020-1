@@ -18,38 +18,38 @@ public class pabellon{
     @GenericGenerator(name="incrementrelpab", strategy="increment")
     @GeneratedValue(generator="incrementrelpab")
     @Column(name="id")
-    long id;
+    int id;
 
-    @Column(name="id_pabellon")
-    long id_pabellon;
+    @Column(name="pabellonId")
+    int pabellonId;
 
-    @OneToMany(mappedBy = "id_medico")
+    @OneToMany(mappedBy = "medicoId")
     private Set<medico> medico;
 
     public pabellon(){
         
     }
 
-    public pabellon(long id, long id_pabellon, Set<medico> medico) {
+    public pabellon(int id, int pabellonId, Set<medico> medico) {
         this.id = id;
-        this.id_pabellon = id_pabellon;
+        this.pabellonId = pabellonId;
         this.medico = medico;
         
     }
-    public long getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdPabellon() {
-        return this.id_pabellon;
+    public int getIdPabellon() {
+        return this.pabellonId;
     }
 
-    public void setIdPabellon(long id_pabellon) {
-        this.id_pabellon = id_pabellon;
+    public void setIdPabellon(int pabellonId) {
+        this.pabellonId = pabellonId;
     }
 
     public Set<medico> getMedico(){

@@ -33,9 +33,9 @@ public class medicoService{
         }
     }
 
-    public boolean borrar(long id){
+    public boolean borrar(int id){
         try{
-            medico medico = repositorio.findByIdMedico(id);
+            medico medico = repositorio.findBymedicoId(id);
             repositorio.delete(medico);
             return true;
         } catch (Exception e){
@@ -43,8 +43,8 @@ public class medicoService{
         }
     }
 
-    public medico obtenerporId(long id){
-        return repositorio.findByIdMedico(id);
+    public medico obtenerporId(int medicoId){
+        return repositorio.findBymedicoId(medicoId);
     }
 
     public List<medico> obtenerAll(){

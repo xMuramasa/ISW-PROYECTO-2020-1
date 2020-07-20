@@ -35,9 +35,9 @@ public class recuperacionService {
         }
     }
 
-    public boolean borrar(long id) {
+    public boolean borrar(int id) {
         try {
-            recuperacion recuperacion = repositorio.findByIdrecuperacion(id);
+            recuperacion recuperacion = repositorio.findByrecuperacionId(id);
             repositorio.delete(recuperacion);
             return true;
         } catch (Exception e) {
@@ -45,11 +45,11 @@ public class recuperacionService {
         }
     }
 
-    public recuperacion obtenerporId(long id) {
-        return repositorio.findByIdrecuperacion(id);
+    public recuperacion obtenerporId(int id) {
+        return repositorio.findByrecuperacionId(id);
     }
 
-    public List<medico> obtenerByrecuperacion(long id) {
-        return repositorio.findByrecuperacion(id);
+    public List<medico> obtenerByrecuperacion(int id) {
+        return repositorio.findAllByrecuperacionId(id);
     }
 }

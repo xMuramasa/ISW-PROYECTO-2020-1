@@ -30,7 +30,7 @@ public class medicoController{
     medicoService servicio;
 
     @GetMapping("/")
-    public medico obtenerMedico(@RequestParam(name="id", required=true) long id){
+    public medico obtenerMedico(@RequestParam(name="medicoId", required=true) int id){
         return servicio.obtenerporId(id);
     }
 
@@ -45,7 +45,7 @@ public class medicoController{
     }
 
     @DeleteMapping("/{id}")
-    public boolean borrarMedico(@PathVariable("id") long id){
+    public boolean borrarMedico(@PathVariable("medicoId") int id){
         return servicio.borrar(id);
     }
 

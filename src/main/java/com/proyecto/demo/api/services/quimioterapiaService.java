@@ -35,9 +35,9 @@ public class quimioterapiaService {
         }
     }
 
-    public boolean borrar(long id) {
+    public boolean borrar(int id) {
         try {
-            quimioterapia quimioterapia = repositorio.findByIdquimioterapia(id);
+            quimioterapia quimioterapia = repositorio.findByquimioterapiaId(id);
             repositorio.delete(quimioterapia);
             return true;
         } catch (Exception e) {
@@ -45,11 +45,11 @@ public class quimioterapiaService {
         }
     }
 
-    public quimioterapia obtenerporId(long id) {
-        return repositorio.findByIdquimioterapia(id);
+    public quimioterapia obtenerporId(int id) {
+        return repositorio.findByquimioterapiaId(id);
     }
 
-    public List<medico> obtenerByquimioterapia(long id) {
-        return repositorio.findByquimioterapia(id);
+    public List<medico> obtenerByquimioterapia(int id) {
+        return repositorio.findAllByquimioterapiaId(id);
     }
 }

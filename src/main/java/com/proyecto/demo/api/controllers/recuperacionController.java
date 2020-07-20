@@ -31,7 +31,7 @@ public class recuperacionController {
     recuperacionService servicio;
 
     @GetMapping("/recuperacion")
-    public recuperacion obtenerrecuperacion(@RequestParam(name = "id", required = true) long id) {
+    public recuperacion obtenerrecuperacion(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporId(id);
     }
 
@@ -46,12 +46,12 @@ public class recuperacionController {
     }
 
     @DeleteMapping("/recuperacion/{id}")
-    public boolean borrarrecuperacion(@PathVariable("id") long id) {
+    public boolean borrarrecuperacion(@PathVariable("id") int id) {
         return servicio.borrar(id);
     }
 
     @GetMapping("/medico")
-    public List<medico> obtenerByrecuperacion(@RequestParam(name = "medico", required = true) long id) {
+    public List<medico> obtenerByrecuperacion(@RequestParam(name = "medico", required = true) int id) {
         return servicio.obtenerByrecuperacion(id);
     }
 

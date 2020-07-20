@@ -8,20 +8,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.proyecto.demo.api.models.pabellon;
-import com.proyecto.demo.api.models.quimioterapia;
-import com.proyecto.demo.api.models.recuperacion;
-
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="MEDICO")
+@Table(name="medico")
 @Entity
 public class medico{
     @Id
     @GenericGenerator(name="incrementmedico", strategy="increment")
     @GeneratedValue(generator="incrementmedico")
-    @Column(name="id_medico")
-    long id_medico;
+    @Column(name="medicoId")
+    int medicoId;
     
     @Column(name="nombres")
     String nombres;
@@ -45,15 +41,15 @@ public class medico{
     Boolean ocupado;
 
     @ManyToOne
-    @JoinColumn(name="id_pabellon", nullable=false)
+    @JoinColumn(name="pabellonId", nullable=false)
     pabellon pabellon;
 
     @ManyToOne
-    @JoinColumn(name = "id_quimioterapia", nullable=false)
+    @JoinColumn(name = "quimioterapiaId", nullable=false)
     quimioterapia quimioterapia;
     
     @ManyToOne
-    @JoinColumn(name = "id_recuperacion", nullable=false)
+    @JoinColumn(name = "recuperacionId", nullable=false)
     recuperacion recuperacion;
 
 
@@ -61,8 +57,8 @@ public class medico{
 
     }
 
-    public medico(long id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado, pabellon pabellon, quimioterapia quimioterapia, recuperacion recuperacion) {
-        this.id_medico = id;
+    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado, pabellon pabellon, quimioterapia quimioterapia, recuperacion recuperacion) {
+        this.medicoId = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.rut = rut;
@@ -77,12 +73,12 @@ public class medico{
 
     }
 
-    public long getId() {
-        return this.id_medico;
+    public int getId() {
+        return this.medicoId;
     }
 
-    public void setId(long id) {
-        this.id_medico = id;
+    public void setId(int id) {
+        this.medicoId = id;
     }
 
     public String getNombres() {

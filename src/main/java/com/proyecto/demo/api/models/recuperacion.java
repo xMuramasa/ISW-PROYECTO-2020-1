@@ -18,39 +18,39 @@ public class recuperacion {
     @GenericGenerator(name = "incrementrelpab", strategy = "increment")
     @GeneratedValue(generator = "incrementrelpab")
     @Column(name = "id")
-    long id;
+    int id;
 
-    @Column(name = "id_recuperacion")
-    long id_recuperacion;
+    @Column(name = "recuperacionId")
+    int recuperacionId;
 
-    @OneToMany(mappedBy = "id_medico")
+    @OneToMany(mappedBy = "medicoId")
     private Set<medico> medico;
 
     public recuperacion() {
 
     }
 
-    public recuperacion(long id, long id_recuperacion, Set<medico> medico) {
+    public recuperacion(int id, int recuperacionId, Set<medico> medico) {
         this.id = id;
-        this.id_recuperacion = id_recuperacion;
+        this.recuperacionId = recuperacionId;
         this.medico = medico;
 
     }
 
-    public long getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdrecuperacion() {
-        return this.id_recuperacion;
+    public int getIdrecuperacion() {
+        return this.recuperacionId;
     }
 
-    public void setIdrecuperacion(long id_recuperacion) {
-        this.id_recuperacion = id_recuperacion;
+    public void setIdrecuperacion(int recuperacionId) {
+        this.recuperacionId = recuperacionId;
     }
 
     public Set<medico> getMedico() {

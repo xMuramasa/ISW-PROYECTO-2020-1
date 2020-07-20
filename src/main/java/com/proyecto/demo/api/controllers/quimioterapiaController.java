@@ -31,7 +31,7 @@ public class quimioterapiaController {
     quimioterapiaService servicio;
 
     @GetMapping("/quimioterapia")
-    public quimioterapia obtenerquimioterapia(@RequestParam(name = "id", required = true) long id) {
+    public quimioterapia obtenerquimioterapia(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporId(id);
     }
 
@@ -46,12 +46,12 @@ public class quimioterapiaController {
     }
 
     @DeleteMapping("/quimioterapia/{id}")
-    public boolean borrarquimioterapia(@PathVariable("id") long id) {
+    public boolean borrarquimioterapia(@PathVariable("id") int id) {
         return servicio.borrar(id);
     }
 
     @GetMapping("/medico")
-    public List<medico> obtenerByquimioterapia(@RequestParam(name = "medico", required = true) long id) {
+    public List<medico> obtenerByquimioterapia(@RequestParam(name = "medico", required = true) int id) {
         return servicio.obtenerByquimioterapia(id);
     }
 

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository("repositoryrecuperacion")
 public interface recuperacionRepository extends JpaRepository<recuperacion, Serializable> {
 
-    public abstract recuperacion findByIdrecuperacion(long id_recuperacion);
+    public abstract recuperacion findByrecuperacionId(int recuperacionId);
 
-    public abstract List<medico> findByrecuperacion(long id_recuperacion);
+    public abstract List<medico> findAllByrecuperacionId(int recuperacionId);
 
 }

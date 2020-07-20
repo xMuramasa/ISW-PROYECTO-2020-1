@@ -18,39 +18,39 @@ public class quimioterapia {
     @GenericGenerator(name = "incrementrelpab", strategy = "increment")
     @GeneratedValue(generator = "incrementrelpab")
     @Column(name = "id")
-    long id;
+    int id;
 
-    @Column(name = "id_quimioterapia")
-    long id_quimioterapia;
+    @Column(name = "quimioterapiaId")
+    int quimioterapiaId;
 
-    @OneToMany(mappedBy = "id_medico")
+    @OneToMany(mappedBy = "medicoId")
     private Set<medico> medico;
 
     public quimioterapia() {
 
     }
 
-    public quimioterapia(long id, long id_quimioterapia, Set<medico> medico) {
+    public quimioterapia(int id, int quimioterapiaId, Set<medico> medico) {
         this.id = id;
-        this.id_quimioterapia = id_quimioterapia;
+        this.quimioterapiaId = quimioterapiaId;
         this.medico = medico;
 
     }
 
-    public long getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getIdquimioterapia() {
-        return this.id_quimioterapia;
+    public int getIdquimioterapia() {
+        return this.quimioterapiaId;
     }
 
-    public void setIdquimioterapia(long id_quimioterapia) {
-        this.id_quimioterapia = id_quimioterapia;
+    public void setIdquimioterapia(int quimioterapiaId) {
+        this.quimioterapiaId = quimioterapiaId;
     }
 
     public Set<medico> getMedico() {

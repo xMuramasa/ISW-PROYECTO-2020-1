@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository("repositorypabellon")
 public interface pabellonRepository extends JpaRepository<pabellon, Serializable> {
 
-    public abstract pabellon findByIdPabellon(long id_pabellon);
+    public abstract pabellon findBypabellonId(int pabellonId);
 
-    public abstract List<medico> findByPabellon(long id_pabellon);
+    public abstract List<medico> findAllBypabellonId(int pabellonId);
 
 }

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 @Repository("repositoryquimioterapia")
 public interface quimioterapiaRepository extends JpaRepository<quimioterapia, Serializable> {
 
-    public abstract quimioterapia findByIdquimioterapia(long id_quimioterapia);
+    public abstract quimioterapia findByquimioterapiaId(int quimioterapiaId);
 
-    public abstract List<medico> findByquimioterapia(long id_quimioterapia);
+    public abstract List<medico> findAllByquimioterapiaId(int quimioterapiaId);
 
 }
