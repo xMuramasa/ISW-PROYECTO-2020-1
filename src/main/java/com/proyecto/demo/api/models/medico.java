@@ -52,7 +52,10 @@ public class medico{
 
     public medico(long id, String nombre1, String nombre2, String apellido1, String apellido2, String rut, String numero, String cargo, String correo, Boolean ocupado) {
         this.id = id;
-        this.nombre = nombre;
+        this.nombre1 = nombre1;
+        this.nombre2 = nombre2;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
         this.rut = rut;
         this.numero = numero;
         this.cargo = cargo;
@@ -68,14 +71,38 @@ public class medico{
         this.id = id;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public String getNombre1() {
+        return this.nombre1;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre1(String nombre1) {
+        this.nombre1 = nombre1;
     }
 
+    public String getNombre2() {
+        return this.nombre2;
+    }
+
+    public void setNombre2(String nombre2) {
+        this.nombre2 = nombre2;
+    }
+    
+    public String getApellido1() {
+        return this.apellido1;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+
+    public String getApellido2() {
+        return this.apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+    
     public String getRut() {
         return this.rut;
     }
