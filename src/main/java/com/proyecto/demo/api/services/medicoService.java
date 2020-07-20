@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("servicioequipo")
+@Service("servicemedico")
 public class medicoService{
     @Autowired
-    @Qualifier("repositorioequipo")
+    @Qualifier("repositorymedico")
     private medicoRepository repositorio;
 
     public boolean crear(medico medico){

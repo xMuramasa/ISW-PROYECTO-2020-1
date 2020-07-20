@@ -5,7 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import com.proyecto.demo.api.models.medico;
-import com.proyecto.demo.api.services.medicoService;
+import com.proyecto.demo.api.models.pabellon;
+import com.proyecto.demo.api.services.pabellonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,36 +23,36 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/medico")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
-public class medicoController{
+@RequestMapping("/v1/pabellon")
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
+public class pabellonController {
     @Autowired
-    @Qualifier("servicemedico")
-    medicoService servicio;
+    @Qualifier("servicepabellon")
+    pabellonService servicio;
 
-    @GetMapping("/")
-    public medico obtenerMedico(@RequestParam(name="id", required=true) long id){
+    @GetMapping("/pabellon")
+    public pabellon obtenerpabellon(@RequestParam(name = "id", required = true) long id) {
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/")
-    public boolean agregarMedico(@RequestBody @Valid medico medico){
-        return servicio.crear(medico);
+    @PostMapping("/pabellon")
+    public boolean agregarpabellon(@RequestBody @Valid pabellon pabellon) {
+        return servicio.crear(pabellon);
     }
 
-    @PutMapping("/")
-    public boolean actualizarMedico(@RequestBody @Valid medico medico){
-        return servicio.actualizar(medico);
+    @PutMapping("/pabellon")
+    public boolean actualizarpabellon(@RequestBody @Valid pabellon pabellon) {
+        return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/{id}")
-    public boolean borrarMedico(@PathVariable("id") long id){
+    @DeleteMapping("/pabellon/{id}")
+    public boolean borrarpabellon(@PathVariable("id") long id) {
         return servicio.borrar(id);
     }
 
-    @GetMapping("/medicos")
-    public List<medico> getAllMedico(){
-        return servicio.obtenerAll();
+    @GetMapping("/medico")
+    public List<medico> obtenerByPabellon(@RequestParam(name = "medico", required = true) long id) {
+        return servicio.obtenerByPabellon(id);
     }
 
 }
