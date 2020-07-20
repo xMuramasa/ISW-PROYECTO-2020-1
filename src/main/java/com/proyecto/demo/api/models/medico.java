@@ -45,15 +45,15 @@ public class medico{
     Boolean ocupado;
 
     @ManyToOne
-    @JoinColumn(name="pabellon", nullable=false)
+    @JoinColumn(name="id_pabellon", nullable=false)
     pabellon pabellon;
 
     @ManyToOne
-    @JoinColumn(name = "quimioterapia", nullable=false)
+    @JoinColumn(name = "id_quimioterapia", nullable=false)
     quimioterapia quimioterapia;
     
     @ManyToOne
-    @JoinColumn(name = "recuperacion", nullable=false)
+    @JoinColumn(name = "id_recuperacion", nullable=false)
     recuperacion recuperacion;
 
 

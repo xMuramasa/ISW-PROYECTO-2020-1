@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name = "quimioterapia")
+@Table(name = "Quimioterapia")
 @Entity
 public class quimioterapia {
     @Id
@@ -23,17 +23,17 @@ public class quimioterapia {
     @Column(name = "id_quimioterapia")
     long id_quimioterapia;
 
-    @OneToMany(mappedBy = "id_quimioterapia")
-    private Set<medico> medicos;
+    @OneToMany(mappedBy = "id_medico")
+    private Set<medico> medico;
 
     public quimioterapia() {
 
     }
 
-    public quimioterapia(long id, long id_quimioterapia, Set<medico> medicos) {
+    public quimioterapia(long id, long id_quimioterapia, Set<medico> medico) {
         this.id = id;
         this.id_quimioterapia = id_quimioterapia;
-        this.medicos = medicos;
+        this.medico = medico;
 
     }
 
@@ -53,12 +53,12 @@ public class quimioterapia {
         this.id_quimioterapia = id_quimioterapia;
     }
 
-    public Set<medico> getMedicos() {
-        return this.medicos;
+    public Set<medico> getMedico() {
+        return this.medico;
     }
 
-    public void setMedicos(Set<medico> medicos) {
-        this.medicos = medicos;
+    public void setMedico(Set<medico> medico) {
+        this.medico = medico;
     }
 
 }

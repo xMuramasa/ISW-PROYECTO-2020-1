@@ -23,17 +23,17 @@ public class recuperacion {
     @Column(name = "id_recuperacion")
     long id_recuperacion;
 
-    @OneToMany(mappedBy = "id_recuperacion")
-    private Set<medico> medicos;
+    @OneToMany(mappedBy = "id_medico")
+    private Set<medico> medico;
 
     public recuperacion() {
 
     }
 
-    public recuperacion(long id, long id_recuperacion, Set<medico> medicos) {
+    public recuperacion(long id, long id_recuperacion, Set<medico> medico) {
         this.id = id;
         this.id_recuperacion = id_recuperacion;
-        this.medicos = medicos;
+        this.medico = medico;
 
     }
 
@@ -53,12 +53,12 @@ public class recuperacion {
         this.id_recuperacion = id_recuperacion;
     }
 
-    public Set<medico> getMedicos() {
-        return this.medicos;
+    public Set<medico> getMedico() {
+        return this.medico;
     }
 
-    public void setMedicos(Set<medico> medicos) {
-        this.medicos = medicos;
+    public void setMedico(Set<medico> medico) {
+        this.medico = medico;
     }
 
 }
