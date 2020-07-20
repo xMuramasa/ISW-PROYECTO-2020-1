@@ -35,7 +35,7 @@ public class pabellon{
         this.id_pabellon = id_pabellon;
         this.medicos = medicos;
         
-
+    }
     public long getId() {
         return this.id;
     }
