@@ -57,7 +57,7 @@ public class medico{
 
     }
 
-    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado, pabellon pabellon, quimioterapia quimioterapia, recuperacion recuperacion) {
+    public medico(int id, String nombres, String apellidos, String rut, String numero, String cargo, String correo, Boolean ocupado) {
         this.medicoId = id;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -66,12 +66,7 @@ public class medico{
         this.cargo = cargo;
         this.correo = correo;
         this.ocupado = ocupado;
-
-        this.recuperacion = recuperacion;        
-        this.quimioterapia =quimioterapia;
-        this.pabellon= pabellon;
-
-    }
+        }
 
     public int getId() {
         return this.medicoId;
