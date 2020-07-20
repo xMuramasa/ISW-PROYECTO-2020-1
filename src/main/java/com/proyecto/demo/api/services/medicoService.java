@@ -2,31 +2,31 @@ package com.proyecto.demo.api.services;
 
 import java.util.List;
 
-import com.ayudantia.demo.HLTV.Modelos.Equipo;
-import com.ayudantia.demo.HLTV.Repositorios.EquipoRepositorio;
+import com.proyecto.demo.api.models.medico;
+import com.proyecto.demo.api.repositories.medicoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service("servicioequipo")
-public class EquipoServicio{
+public class medicoService{
     @Autowired
     @Qualifier("repositorioequipo")
-    private EquipoRepositorio repositorio;
+    private medicoRepository repositorio;
 
-    public boolean crear(Equipo equipo){
+    public boolean crear(medico medico){
         try{
-            repositorio.save(equipo);
+            repositorio.save(medico);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public boolean actualizar(Equipo equipo){
+    public boolean actualizar(medico medico){
         try{
-            repositorio.save(equipo);
+            repositorio.save(medico);
             return true;
         } catch (Exception e){
             return false;
@@ -35,19 +35,19 @@ public class EquipoServicio{
 
     public boolean borrar(long id){
         try{
-            Equipo equipo = repositorio.findById(id);
-            repositorio.delete(equipo);
+            medico medico = repositorio.findByIdMedico(id);
+            repositorio.delete(medico);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public Equipo obtenerporId(long id){
-        return repositorio.findById(id);
+    public medico obtenerporId(long id){
+        return repositorio.findByIdMedico(id);
     }
 
-    public List<Equipo> obtenerAll(){
+    public List<medico> obtenerAll(){
         return repositorio.findAll();
     }
 
