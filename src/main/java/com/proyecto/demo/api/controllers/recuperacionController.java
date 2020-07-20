@@ -50,7 +50,7 @@ public class recuperacionController {
     }
 
     @GetMapping("/getAllRecuperacion")
-    public List<recuperacion> obtenerByrecuperacion(@RequestParam(name = "medico", required = true) int id) {
+    public List<recuperacion> obtenerByrecuperacion(@RequestParam(name = "recuperacionId", required = true) int id) {
         return servicio.obtenerByrecuperacionId(id);
     }
 
