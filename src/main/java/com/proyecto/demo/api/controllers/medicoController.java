@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/equipo")
+@RequestMapping("/v1/medico")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class medicoController{
     @Autowired
@@ -30,27 +30,27 @@ public class medicoController{
     medicoService servicio;
 
     @GetMapping("/")
-    public Equipo obtenerEquipo(@RequestParam(name="id", required=true) long id){
+    public medico obtenerMedico(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarEquipo(@RequestBody @Valid Equipo equipo){
-        return servicio.crear(equipo);
+    public boolean agregarMedico(@RequestBody @Valid medico medico){
+        return servicio.crear(medico);
     }
 
     @PutMapping("/")
-    public boolean actualizarEquipo(@RequestBody @Valid Equipo equipo){
-        return servicio.actualizar(equipo);
+    public boolean actualizarMedico(@RequestBody @Valid medico medico){
+        return servicio.actualizar(medico);
     }
 
     @DeleteMapping("/{id}")
-    public boolean borrarEquipo(@PathVariable("id") long id){
+    public boolean borrarMedico(@PathVariable("id") long id){
         return servicio.borrar(id);
     }
 
-    @GetMapping("/equipos")
-    public List<Equipo> getAllEquipo(){
+    @GetMapping("/medicos")
+    public List<medico> getAllMedico(){
         return servicio.obtenerAll();
     }
 
