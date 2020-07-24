@@ -34,9 +34,9 @@ public class pabellonService{
         }
     }
 
-    public boolean borrar(int pabellonId, int personalId){
+    public boolean borrar(int personalId){
         try{
-            pabellon pabellon = repositorio.findBypabellonIdAndpersonalId(pabellonId, personalId);
+            pabellon pabellon = repositorio.findBypersonalId(personalId);
             repositorio.delete(pabellon);
             return true;
         } catch (Exception e){

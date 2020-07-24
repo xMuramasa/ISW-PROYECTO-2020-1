@@ -34,12 +34,12 @@ public class recuperacionService {
         }
     }
 
-    public boolean borrar(int id) {
-        try {
-            recuperacion recuperacion = repositorio.findByrecuperacionId(id);
+    public boolean borrar(int personalId){
+        try{
+            recuperacion recuperacion = repositorio.findBypersonalId(personalId);
             repositorio.delete(recuperacion);
             return true;
-        } catch (Exception e) {
+        } catch (Exception e){
             return false;
         }
     }

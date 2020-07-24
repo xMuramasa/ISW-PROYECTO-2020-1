@@ -44,9 +44,9 @@ public class pabellonController {
         return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/{pabellonId}&{personalId}")
-    public boolean borrarpabellon(@PathVariable("pabellonId") int pabellonId, @PathVariable("personalId") int personalId) {
-        return servicio.borrar(pabellonId, personalId);
+    @DeleteMapping("/{personalId}")
+    public boolean borrarpabellon(@RequestParam(name = "personalId") int personalId) {
+        return servicio.borrar(personalId);
     }
 
     @GetMapping("/getAllPabellon/{pabellonId}")

@@ -34,9 +34,9 @@ public class quimioterapiaService {
         }
     }
 
-    public boolean borrar(int id) {
+    public boolean borrar(int personalId) {
         try {
-            quimioterapia quimioterapia = repositorio.findByquimioterapiaId(id);
+            quimioterapia quimioterapia = repositorio.findBypersonalId(personalId);
             repositorio.delete(quimioterapia);
             return true;
         } catch (Exception e) {

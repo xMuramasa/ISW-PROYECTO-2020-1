@@ -13,6 +13,8 @@ public interface recuperacionRepository extends JpaRepository<recuperacion, Seri
 
     public abstract recuperacion findByrecuperacionId(int recuperacionId);
 
+    public abstract recuperacion findBypersonalId(int personalId);
+
     public abstract List<recuperacion> findAllByrecuperacionId(int recuperacionId);
 
 }
