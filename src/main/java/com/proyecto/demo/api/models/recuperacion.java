@@ -50,11 +50,11 @@ public class recuperacion {
         this.recuperacionId = recuperacionId;
     }
 
-    public int getMedicoId() {
+    public int getpersonalId() {
         return this.personalId;
     }
 
-    public void setMedico(int personalId) {
+    public void setpersonal(int personalId) {
         this.personalId = personalId;
     }
 

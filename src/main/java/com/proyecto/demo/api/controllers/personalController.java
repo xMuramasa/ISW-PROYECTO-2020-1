@@ -30,7 +30,7 @@ public class personalController{
     personalService servicio;
 
     @GetMapping("/{id}")
-    public personal obtenerPersonal(@RequestParam(name="personalId", required=true) int id){
+    public personal obtenerPersonal(@RequestParam(name="id", required=true) int id){
         return servicio.obtenerporId(id);
     }
 
@@ -45,7 +45,7 @@ public class personalController{
     }
 
     @DeleteMapping("/{id}")
-    public boolean borrarPersonal(@PathVariable("personalId") int id){
+    public boolean borrarPersonal(@PathVariable("id") int id){
         return servicio.borrar(id);
     }
 

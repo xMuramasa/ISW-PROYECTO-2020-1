@@ -22,34 +22,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/personal")
+@RequestMapping("/personal/recuperacion")
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
 public class recuperacionController {
     @Autowired
     @Qualifier("servicerecuperacion")
     recuperacionService servicio;
 
-    @GetMapping("/recuperacion")
+    @GetMapping("/{id}")
     public recuperacion obtenerrecuperacion(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/recuperacion")
+    @PostMapping("/")
     public boolean agregarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
         return servicio.crear(recuperacion);
     }
 
-    @PutMapping("/recuperacion")
+    @PutMapping("/")
     public boolean actualizarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
         return servicio.actualizar(recuperacion);
     }
 
-    @DeleteMapping("/recuperacion/{id}")
+    @DeleteMapping("/{id}")
     public boolean borrarrecuperacion(@PathVariable("id") int id) {
         return servicio.borrar(id);
     }
 
-    @GetMapping("/getAllRecuperacion")
+    @GetMapping("/getAllRecuperacion{recuperacionId}")
     public List<recuperacion> obtenerByrecuperacion(@RequestParam(name = "recuperacionId", required = true) int id) {
         return servicio.obtenerByrecuperacionId(id);
     }

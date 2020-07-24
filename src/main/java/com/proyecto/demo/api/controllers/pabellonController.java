@@ -22,34 +22,34 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/personal")
+@RequestMapping("/personal/pabellon")
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
 public class pabellonController {
     @Autowired
     @Qualifier("servicepabellon")
     pabellonService servicio;
 
-    @GetMapping("/pabellon")
+    @GetMapping("/{id}")
     public pabellon obtenerpabellon(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporpabellonId(id);
     }
 
-    @PostMapping("/pabellon")
+    @PostMapping("/")
     public boolean agregarpabellon(@RequestBody @Valid pabellon pabellon) {
         return servicio.crear(pabellon);
     }
 
-    @PutMapping("/pabellon")
+    @PutMapping("/")
     public boolean actualizarpabellon(@RequestBody @Valid pabellon pabellon) {
         return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/pabellon/{pabellonId}&{personalId}")
+    @DeleteMapping("/{pabellonId}&{personalId}")
     public boolean borrarpabellon(@PathVariable("pabellonId") int pabellonId, @PathVariable("personalId") int personalId) {
         return servicio.borrar(pabellonId, personalId);
     }
 
-    @GetMapping("/getAllPabellon")
+    @GetMapping("/getAllPabellon/{pabellonId}")
     public List<pabellon> obtenerByPabellon(@RequestParam(name = "pabellonId", required = true) int id) {
         return servicio.obtenerBypabellonId(id);
     }
