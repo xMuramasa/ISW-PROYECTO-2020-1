@@ -29,7 +29,7 @@ public class quimioterapiaController {
     @Qualifier("servicequimioterapia")
     quimioterapiaService servicio;
 
-    @GetMapping("/{id}")
+    @GetMapping("/")
     public quimioterapia obtenerquimioterapia(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporId(id);
     }
@@ -44,8 +44,8 @@ public class quimioterapiaController {
         return servicio.actualizar(quimioterapia);
     }
 
-    @DeleteMapping("/{id}")
-    public boolean borrarquimioterapia(@PathVariable("id") int id) {
+    @DeleteMapping("/")
+    public boolean borrarquimioterapia(@RequestParam(name = "id", required = true) int id) {
         return servicio.borrar(id);
     }
 

@@ -29,7 +29,7 @@ public class recuperacionController {
     @Qualifier("servicerecuperacion")
     recuperacionService servicio;
 
-    @GetMapping("/{id}")
+    @GetMapping("/")
     public recuperacion obtenerrecuperacion(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporId(id);
     }
@@ -44,8 +44,8 @@ public class recuperacionController {
         return servicio.actualizar(recuperacion);
     }
 
-    @DeleteMapping("/{id}")
-    public boolean borrarrecuperacion(@PathVariable("id") int id) {
+    @DeleteMapping("/")
+    public boolean borrarrecuperacion(@RequestParam(name = "id", required = true) int id) {
         return servicio.borrar(id);
     }
 
