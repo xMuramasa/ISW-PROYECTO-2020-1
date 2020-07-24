@@ -49,7 +49,7 @@ public class personalController{
         return servicio.borrar(id);
     }
 
-    @GetMapping("/personals")
+    @GetMapping("/personal")
     public List<personal> getAllPersonal(){
         return servicio.obtenerAll();
     }
