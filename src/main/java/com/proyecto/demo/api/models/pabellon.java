@@ -20,17 +20,17 @@ public class pabellon{
     @Column(name="pabellonId")
     int pabellonId;
 
-    @Column(name="medicoId")
-    int medicoId;
+    @Column(name="personalId")
+    int personalId;
 
     public pabellon(){
         
     }
 
-    public pabellon(int id, int pabellonId, int medicoId) {
+    public pabellon(int id, int pabellonId, int personalId) {
         this.id = id;
         this.pabellonId = pabellonId;
-        this.medicoId = medicoId;
+        this.personalId = personalId;
         
     }
     public int getId() {
@@ -49,11 +49,11 @@ public class pabellon{
         this.pabellonId = pabellonId;
     }
 
-    public int getmedicoId(){
-        return this.medicoId;
+    public int getpersonalId(){
+        return this.personalId;
     }
-    public void setmedicoId(int medicoId){
-        this.medicoId = medicoId;
+    public void setpersonalId(int personalId){
+        this.personalId = personalId;
     } 
 
 }

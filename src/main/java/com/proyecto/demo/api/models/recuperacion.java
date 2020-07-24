@@ -20,17 +20,17 @@ public class recuperacion {
     @Column(name = "recuperacionId")
     int recuperacionId;
 
-    @Column(name = "medicoId")
-    int medicoId;
+    @Column(name = "personalId")
+    int personalId;
 
     public recuperacion() {
 
     }
 
-    public recuperacion(int id, int recuperacionId, int medicoId) {
+    public recuperacion(int id, int recuperacionId, int personalId) {
         this.id = id;
         this.recuperacionId = recuperacionId;
-        this.medicoId = medicoId;
+        this.personalId = personalId;
 
     }
 
@@ -51,11 +51,11 @@ public class recuperacion {
     }
 
     public int getMedicoId() {
-        return this.medicoId;
+        return this.personalId;
     }
 
-    public void setMedico(int medicoId) {
-        this.medicoId = medicoId;
+    public void setMedico(int personalId) {
+        this.personalId = personalId;
     }
 
 }

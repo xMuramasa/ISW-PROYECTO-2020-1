@@ -31,7 +31,7 @@ public class pabellonController {
 
     @GetMapping("/pabellon")
     public pabellon obtenerpabellon(@RequestParam(name = "id", required = true) int id) {
-        return servicio.obtenerporId(id);
+        return servicio.obtenerporpabellonId(id);
     }
 
     @PostMapping("/pabellon")
@@ -44,9 +44,9 @@ public class pabellonController {
         return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/pabellon/{id}")
-    public boolean borrarpabellon(@PathVariable("id") int id) {
-        return servicio.borrar(id);
+    @DeleteMapping("/pabellon/{pabellonId}&{personalId}")
+    public boolean borrarpabellon(@PathVariable("pabellonId") int pabellonId, @PathVariable("personalId") int personalId) {
+        return servicio.borrar(pabellonId, personalId);
     }
 
     @GetMapping("/getAllPabellon")

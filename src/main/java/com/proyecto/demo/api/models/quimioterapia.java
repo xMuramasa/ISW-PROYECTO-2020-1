@@ -20,17 +20,17 @@ public class quimioterapia {
     @Column(name = "quimioterapiaId")
     int quimioterapiaId;
 
-    @Column(name = "medicoId")
-    int medicoId;
+    @Column(name = "personalId")
+    int personalId;
 
     public quimioterapia() {
 
     }
 
-    public quimioterapia(int id, int quimioterapiaId, int medicoId) {
+    public quimioterapia(int id, int quimioterapiaId, int personalId) {
         this.id = id;
         this.quimioterapiaId = quimioterapiaId;
-        this.medicoId = medicoId;
+        this.personalId = personalId;
 
     }
 
@@ -50,12 +50,12 @@ public class quimioterapia {
         this.quimioterapiaId = quimioterapiaId;
     }
 
-    public int getmedicoId() {
-        return this.medicoId;
+    public int getpersonalId() {
+        return this.personalId;
     }
 
-    public void setmedicoId(int medicoId) {
-        this.medicoId = medicoId;
+    public void setpersonalId(int personalId) {
+        this.personalId = personalId;
     }
 
 }

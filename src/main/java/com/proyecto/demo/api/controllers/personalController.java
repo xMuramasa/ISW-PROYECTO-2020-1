@@ -29,7 +29,7 @@ public class personalController{
     @Qualifier("servicepersonal")
     personalService servicio;
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public personal obtenerPersonal(@RequestParam(name="personalId", required=true) int id){
         return servicio.obtenerporId(id);
     }
