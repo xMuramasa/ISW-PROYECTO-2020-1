@@ -42,7 +42,7 @@ public class quimioterapia {
         this.id = id;
     }
 
-    public int getIquimioterapiaId() {
+    public int getquimioterapiaId() {
         return this.quimioterapiaId;
     }
 

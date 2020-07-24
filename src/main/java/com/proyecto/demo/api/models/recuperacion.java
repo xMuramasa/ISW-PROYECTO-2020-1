@@ -42,7 +42,7 @@ public class recuperacion {
         this.id = id;
     }
 
-    public int getIrecuperacionId() {
+    public int getrecuperacionId() {
         return this.recuperacionId;
     }
 

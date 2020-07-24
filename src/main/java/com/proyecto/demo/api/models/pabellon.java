@@ -41,7 +41,7 @@ public class pabellon{
         this.id = id;
     }
 
-    public int getIpabellonId() {
+    public int getpabellonId() {
         return this.pabellonId;
     }
 
