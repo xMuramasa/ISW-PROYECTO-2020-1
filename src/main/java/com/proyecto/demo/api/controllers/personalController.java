@@ -29,7 +29,7 @@ public class personalController{
     @Qualifier("servicepersonal")
     personalService servicio;
 
-    @GetMapping("/{id}")
+    @GetMapping("/")
     public personal obtenerPersonal(@RequestParam(name="id", required=true) int id){
         return servicio.obtenerporId(id);
     }
@@ -44,8 +44,8 @@ public class personalController{
         return servicio.actualizar(personal);
     }
 
-    @DeleteMapping("/{id}")
-    public boolean borrarPersonal(@PathVariable("id") int id){
+    @DeleteMapping("/")
+    public boolean borrarPersonal(@RequestParam(name="id", required=true)  int id){
         return servicio.borrar(id);
     }
 
