@@ -29,7 +29,7 @@ public class pabellonController {
     @Qualifier("servicepabellon")
     pabellonService servicio;
 
-    @GetMapping("/{id}")
+    @GetMapping("/")
     public pabellon obtenerpabellon(@RequestParam(name = "id", required = true) int id) {
         return servicio.obtenerporpabellonId(id);
     }
@@ -44,12 +44,12 @@ public class pabellonController {
         return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/{personalId}")
+    @DeleteMapping("/")
     public boolean borrarpabellon(@RequestParam(name = "personalId") int personalId) {
         return servicio.borrar(personalId);
     }
 
-    @GetMapping("/getAllPabellon/{pabellonId}")
+    @GetMapping("/getAllPabellon")
     public List<pabellon> obtenerByPabellon(@RequestParam(name = "pabellonId", required = true) int id) {
         return servicio.obtenerBypabellonId(id);
     }
