@@ -2,31 +2,31 @@ package com.proyecto.demo.api.services;
 
 import java.util.List;
 
-import com.proyecto.demo.api.models.medico;
-import com.proyecto.demo.api.repositories.medicoRepository;
+import com.proyecto.demo.api.models.personal;
+import com.proyecto.demo.api.repositories.personalRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("servicemedico")
-public class medicoService{
+@Service("servicepersonal")
+public class personalService{
     @Autowired
-    @Qualifier("repositorymedico")
-    private medicoRepository repositorio;
+    @Qualifier("repositorypersonal")
+    private personalRepository repositorio;
 
-    public boolean crear(medico medico){
+    public boolean crear(personal personal){
         try{
-            repositorio.save(medico);
+            repositorio.save(personal);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public boolean actualizar(medico medico){
+    public boolean actualizar(personal personal){
         try{
-            repositorio.save(medico);
+            repositorio.save(personal);
             return true;
         } catch (Exception e){
             return false;
@@ -35,19 +35,19 @@ public class medicoService{
 
     public boolean borrar(int id){
         try{
-            medico medico = repositorio.findBymedicoId(id);
-            repositorio.delete(medico);
+            personal personal = repositorio.findBypersonalId(id);
+            repositorio.delete(personal);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public medico obtenerporId(int medicoId){
-        return repositorio.findBymedicoId(medicoId);
+    public personal obtenerporId(int personalId){
+        return repositorio.findBypersonalId(personalId);
     }
 
-    public List<medico> obtenerAll(){
+    public List<personal> obtenerAll(){
         return repositorio.findAll();
     }
 

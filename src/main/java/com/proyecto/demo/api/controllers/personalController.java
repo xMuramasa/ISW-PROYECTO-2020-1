@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.proyecto.demo.api.models.medico;
-import com.proyecto.demo.api.services.medicoService;
+import com.proyecto.demo.api.models.personal;
+import com.proyecto.demo.api.services.personalService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,35 +22,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/medico")
+@RequestMapping("/personal")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
-public class medicoController{
+public class personalController{
     @Autowired
-    @Qualifier("servicemedico")
-    medicoService servicio;
+    @Qualifier("servicepersonal")
+    personalService servicio;
 
     @GetMapping("/")
-    public medico obtenerMedico(@RequestParam(name="medicoId", required=true) int id){
+    public personal obtenerPersonal(@RequestParam(name="personalId", required=true) int id){
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarMedico(@RequestBody @Valid medico medico){
-        return servicio.crear(medico);
+    public boolean agregarPersonal(@RequestBody @Valid personal personal){
+        return servicio.crear(personal);
     }
 
     @PutMapping("/")
-    public boolean actualizarMedico(@RequestBody @Valid medico medico){
-        return servicio.actualizar(medico);
+    public boolean actualizarPersonal(@RequestBody @Valid personal personal){
+        return servicio.actualizar(personal);
     }
 
     @DeleteMapping("/{id}")
-    public boolean borrarMedico(@PathVariable("medicoId") int id){
+    public boolean borrarPersonal(@PathVariable("personalId") int id){
         return servicio.borrar(id);
     }
 
-    @GetMapping("/medicos")
-    public List<medico> getAllMedico(){
+    @GetMapping("/personals")
+    public List<personal> getAllPersonal(){
         return servicio.obtenerAll();
     }
 

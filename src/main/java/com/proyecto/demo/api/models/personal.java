@@ -8,14 +8,14 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="medico")
+@Table(name="personal")
 @Entity
-public class medico{
+public class personal{
     @Id
-    @GenericGenerator(name="incrementmedico", strategy="increment")
-    @GeneratedValue(generator="incrementmedico")
-    @Column(name="medicoId")
-    int medicoId;
+    @GenericGenerator(name="incrementpersonal", strategy="increment")
+    @GeneratedValue(generator="incrementpersonal")
+    @Column(name="personalId")
+    int personalId;
     
     @Column(name="nombres")
     String nombres;
@@ -38,16 +38,16 @@ public class medico{
     @Column(name="ocupado")
     int ocupado;
 
-    public medico(){
+    public personal(){
 
     }
 
     public int getId() {
-        return this.medicoId;
+        return this.personalId;
     }
 
     public void setId(int id) {
-        this.medicoId = id;
+        this.personalId = id;
     }
 
     public String getNombres() {
