@@ -29,18 +29,18 @@ public class pabellonController {
     @Qualifier("servicepabellon")
     pabellonService servicio;
 
-    @GetMapping("/")
-    public pabellon obtenerpabellon(@RequestParam(name = "id", required = true) int id) {
+    @GetMapping("/{id]")
+    public pabellon obtenerpabellon(@PathVariable("id") int id) {
         return servicio.obtenerporpabellonId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarpabellon(@RequestBody @Valid pabellon pabellon) {
+    public pabellon agregarpabellon(@RequestBody @Valid pabellon pabellon) {
         return servicio.crear(pabellon);
     }
 
     @PutMapping("/")
-    public boolean actualizarpabellon(@RequestBody @Valid pabellon pabellon) {
+    public pabellon actualizarpabellon(@RequestBody @Valid pabellon pabellon) {
         return servicio.actualizar(pabellon);
     }
 
@@ -49,9 +49,9 @@ public class pabellonController {
         return servicio.borrar(personalId);
     }
 
-    @GetMapping("/getAllPabellon")
-    public List<pabellon> obtenerByPabellon(@RequestParam(name = "pabellonId", required = true) int id) {
-        return servicio.obtenerBypabellonId(id);
+    @GetMapping("/getAllPabellon/{pabellonId")
+    public List<pabellon> obtenerByPabellon(@PathVariable("pabellonId") int pabellonId) {
+        return servicio.obtenerBypabellonId(pabellonId);
     }
 
 }

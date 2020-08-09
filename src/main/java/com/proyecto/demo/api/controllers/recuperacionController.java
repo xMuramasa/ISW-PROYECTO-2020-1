@@ -29,18 +29,18 @@ public class recuperacionController {
     @Qualifier("servicerecuperacion")
     recuperacionService servicio;
 
-    @GetMapping("/")
-    public recuperacion obtenerrecuperacion(@RequestParam(name = "id", required = true) int id) {
+    @GetMapping("/{id}")
+    public recuperacion obtenerrecuperacion(@PathVariable("id") int id) {
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
+    public recuperacion agregarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
         return servicio.crear(recuperacion);
     }
 
     @PutMapping("/")
-    public boolean actualizarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
+    public recuperacion actualizarrecuperacion(@RequestBody @Valid recuperacion recuperacion) {
         return servicio.actualizar(recuperacion);
     }
 
@@ -50,8 +50,8 @@ public class recuperacionController {
     }
 
     @GetMapping("/getAllRecuperacion{recuperacionId}")
-    public List<recuperacion> obtenerByrecuperacion(@RequestParam(name = "recuperacionId", required = true) int id) {
-        return servicio.obtenerByrecuperacionId(id);
+    public List<recuperacion> obtenerByrecuperacion(@PathVariable("recuperacionId") int recuperacionId) {
+        return servicio.obtenerByrecuperacionId(recuperacionId);
     }
 
 }

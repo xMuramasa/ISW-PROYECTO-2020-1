@@ -15,21 +15,23 @@ public class personalService{
     @Qualifier("repositorypersonal")
     private personalRepository repositorio;
 
-    public boolean crear(personal personal){
+    public personal crear(personal personal){
         try{
             repositorio.save(personal);
-            return true;
+            return personal;
         } catch (Exception e){
-            return false;
+            System.out.println("No se pudo agregar personal");
+            return personal;
         }
     }
 
-    public boolean actualizar(personal personal){
+    public personal actualizar(personal personal){
         try{
             repositorio.save(personal);
-            return true;
+            return personal;
         } catch (Exception e){
-            return false;
+            System.out.println("No se pudo actualizar personal");
+            return personal;
         }
     }
 

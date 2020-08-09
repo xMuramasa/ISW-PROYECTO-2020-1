@@ -29,27 +29,27 @@ public class personalController{
     @Qualifier("servicepersonal")
     personalService servicio;
 
-    @GetMapping("/")
-    public personal obtenerPersonal(@RequestParam(name="id", required=true) int id){
+    @GetMapping("/{id}")
+    public personal obtenerPersonal(@PathVariable("id") int id){
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarPersonal(@RequestBody @Valid personal personal){
+    public personal agregarPersonal(@RequestBody @Valid personal personal){
         return servicio.crear(personal);
     }
 
     @PutMapping("/")
-    public boolean actualizarPersonal(@RequestBody @Valid personal personal){
+    public personal actualizarPersonal(@RequestBody @Valid personal personal){
         return servicio.actualizar(personal);
     }
 
     @DeleteMapping("/")
-    public boolean borrarPersonal(@RequestParam(name="id", required=true)  int id){
+    public boolean borrarPersonal(@RequestParam(name="personalId", required=true)  int id){
         return servicio.borrar(id);
     }
 
-    @GetMapping("/personal")
+    @GetMapping("/getAllPersonal")
     public List<personal> getAllPersonal(){
         return servicio.obtenerAll();
     }

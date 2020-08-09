@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/personal/quimioterapia")
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
@@ -29,18 +30,18 @@ public class quimioterapiaController {
     @Qualifier("servicequimioterapia")
     quimioterapiaService servicio;
 
-    @GetMapping("/")
-    public quimioterapia obtenerquimioterapia(@RequestParam(name = "id", required = true) int id) {
+    @GetMapping("/{id}")
+    public quimioterapia obtenerquimioterapia(@PathVariable("id") int id) {
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")
-    public boolean agregarquimioterapia(@RequestBody @Valid quimioterapia quimioterapia) {
+    public quimioterapia agregarquimioterapia(@RequestBody @Valid quimioterapia quimioterapia) {
         return servicio.crear(quimioterapia);
     }
 
     @PutMapping("/")
-    public boolean actualizarquimioterapia(@RequestBody @Valid quimioterapia quimioterapia) {
+    public quimioterapia actualizarquimioterapia(@RequestBody @Valid quimioterapia quimioterapia) {
         return servicio.actualizar(quimioterapia);
     }
 
@@ -50,8 +51,8 @@ public class quimioterapiaController {
     }
 
     @GetMapping("/getAllQuimioterapia/{quimioterapiaId}")
-    public List<quimioterapia> obtenerByquimioterapia(@RequestParam(name = "quimioterapiaId", required = true) int id) {
-        return servicio.obtenerByquimioterapiaId(id);
+    public List<quimioterapia> obtenerByquimioterapia(@PathVariable("quimioterapiaId") int quimioterapiaId) {
+        return servicio.obtenerByquimioterapiaId(quimioterapiaId);
     }
 
 }

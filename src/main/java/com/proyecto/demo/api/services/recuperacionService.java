@@ -16,21 +16,23 @@ public class recuperacionService {
     @Qualifier("repositoryrecuperacion")
     private recuperacionRepository repositorio;
 
-    public boolean crear(recuperacion recuperacion) {
+    public recuperacion crear(recuperacion recuperacion) {
         try {
             repositorio.save(recuperacion);
-            return true;
+            return recuperacion;
         } catch (Exception e) {
-            return false;
+            System.out.println("No se pudo agregar recuperacion");
+            return recuperacion;
         }
     }
 
-    public boolean actualizar(recuperacion recuperacion) {
+    public recuperacion actualizar(recuperacion recuperacion) {
         try {
             repositorio.save(recuperacion);
-            return true;
+            return recuperacion;
         } catch (Exception e) {
-            return false;
+                System.out.println("No se pudo actualizar recuperacion");
+            return recuperacion;
         }
     }
 

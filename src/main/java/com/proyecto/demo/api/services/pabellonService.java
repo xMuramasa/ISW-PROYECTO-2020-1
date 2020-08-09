@@ -16,21 +16,23 @@ public class pabellonService{
     @Qualifier("repositorypabellon")
     private pabellonRepository repositorio;
     
-    public boolean crear(pabellon pabellon){
+    public pabellon crear(pabellon pabellon){
         try{
             repositorio.save(pabellon);
-            return true;
+            return pabellon;
         } catch (Exception e){
-            return false;
+            System.out.println("No se pudo agregar pabellon");
+            return pabellon;
         }
     }
 
-    public boolean actualizar(pabellon pabellon){
+    public pabellon actualizar(pabellon pabellon){
         try{
             repositorio.save(pabellon);
-            return true;
+            return pabellon;
         } catch (Exception e){
-            return false;
+            System.out.println("No se pudo actualizar pabellon");
+            return pabellon;
         }
     }
 

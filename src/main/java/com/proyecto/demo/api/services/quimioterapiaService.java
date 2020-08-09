@@ -16,21 +16,23 @@ public class quimioterapiaService {
     @Qualifier("repositoryquimioterapia")
     private quimioterapiaRepository repositorio;
 
-    public boolean crear(quimioterapia quimioterapia) {
+    public quimioterapia crear(quimioterapia quimioterapia) {
         try {
             repositorio.save(quimioterapia);
-            return true;
+            return quimioterapia;
         } catch (Exception e) {
-            return false;
+            System.out.println("No se pudo ingresar quimioterapia");
+            return quimioterapia;
         }
     }
 
-    public boolean actualizar(quimioterapia quimioterapia) {
+    public quimioterapia actualizar(quimioterapia quimioterapia) {
         try {
             repositorio.save(quimioterapia);
-            return true;
+            return quimioterapia;
         } catch (Exception e) {
-            return false;
+            System.out.println("No se pudo actualizar quimioterapia");
+            return quimioterapia;
         }
     }
 
