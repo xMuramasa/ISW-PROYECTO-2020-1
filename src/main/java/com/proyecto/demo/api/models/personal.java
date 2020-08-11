@@ -76,7 +76,16 @@ public class personal{
     public String getNumero() {
         return this.numero;
     }
-
+    
+    
+    public String getCorreo() {
+        return this.correo;
+    }
+    
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
     public void setNumero(String numero) {
         this.numero = numero;
     }
