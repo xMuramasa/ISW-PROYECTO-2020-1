@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/personal/quimioterapia")
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class quimioterapiaController {
     @Autowired
     @Qualifier("servicequimioterapia")

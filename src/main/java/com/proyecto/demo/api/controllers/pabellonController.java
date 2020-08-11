@@ -21,9 +21,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+
+
+
 @RestController
 @RequestMapping("/personal/pabellon")
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class pabellonController {
     @Autowired
     @Qualifier("servicepabellon")
