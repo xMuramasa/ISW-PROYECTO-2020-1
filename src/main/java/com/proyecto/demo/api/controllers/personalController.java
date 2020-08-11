@@ -44,8 +44,8 @@ public class personalController{
         return servicio.actualizar(personal);
     }
 
-    @DeleteMapping("/")
-    public boolean borrarPersonal(@RequestParam(name="personalId", required=true)  int id){
+    @DeleteMapping("/{id}")
+    public boolean borrarPersonal(@PathVariable("id") int id){
         return servicio.borrar(id);
     }
 

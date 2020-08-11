@@ -45,9 +45,9 @@ public class quimioterapiaController {
         return servicio.actualizar(quimioterapia);
     }
 
-    @DeleteMapping("/")
-    public boolean borrarquimioterapia(@RequestParam(name = "id", required = true) int id) {
-        return servicio.borrar(id);
+    @DeleteMapping("/{quimioterapiaId}")
+    public boolean borrarquimioterapia(@PathVariable("quimioterapiaId") int quimioterapiaId) {
+        return servicio.borrar(quimioterapiaId);
     }
 
     @GetMapping("/getAllQuimioterapia/{quimioterapiaId}")

@@ -51,12 +51,12 @@ public class pabellonController {
         return servicio.actualizar(pabellon);
     }
 
-    @DeleteMapping("/")
-    public boolean borrarpabellon(@RequestParam(name = "personalId") int personalId) {
-        return servicio.borrar(personalId);
+    @DeleteMapping("/{pabellonId}")
+    public boolean borrarpabellon(@PathVariable("pabellonId") int pabellonId) {
+        return servicio.borrar(pabellonId);
     }
 
-    @GetMapping("/getAllPabellon/{pabellonId")
+    @GetMapping("/getAllPabellon/{pabellonId}")
     public List<pabellon> obtenerByPabellon(@PathVariable("pabellonId") int pabellonId) {
         return servicio.obtenerBypabellonId(pabellonId);
     }

@@ -44,9 +44,9 @@ public class recuperacionController {
         return servicio.actualizar(recuperacion);
     }
 
-    @DeleteMapping("/")
-    public boolean borrarrecuperacion(@RequestParam(name = "id", required = true) int id) {
-        return servicio.borrar(id);
+    @DeleteMapping("/{recuperacionId}")
+    public boolean borrarrecuperacion(@PathVariable("recuperacionId") int recuperacionId) {
+        return servicio.borrar(recuperacionId);
     }
 
     @GetMapping("/getAllRecuperacion{recuperacionId}")
