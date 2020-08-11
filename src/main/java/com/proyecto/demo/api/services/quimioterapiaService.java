@@ -53,4 +53,8 @@ public class quimioterapiaService {
     public List<quimioterapia> obtenerByquimioterapiaId(int id) {
         return repositorio.findAllByquimioterapiaId(id);
     }
+
+    public List<quimioterapia> obtenerAll() {
+        return repositorio.findAll();
+    }
 }

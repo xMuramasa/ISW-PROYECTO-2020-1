@@ -53,4 +53,8 @@ public class recuperacionService {
     public List<recuperacion> obtenerByrecuperacionId(int id) {
         return repositorio.findAllByrecuperacionId(id);
     }
+
+    public List<recuperacion> obtenerAll() {
+        return repositorio.findAll();
+    }
 }

@@ -53,4 +53,8 @@ public class pabellonService{
     public List<pabellon> obtenerBypabellonId(int id){
         return repositorio.findAllBypabellonId(id);
     }
+
+    public List<pabellon> obtenerAll() {
+        return repositorio.findAll();
+    }
 }

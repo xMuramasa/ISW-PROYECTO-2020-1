@@ -61,4 +61,9 @@ public class pabellonController {
         return servicio.obtenerBypabellonId(pabellonId);
     }
 
+    @GetMapping("/getAllPabellon")
+    public List<pabellon> getAllPabellon(){
+        return servicio.obtenerAll();
+    }
+
 }

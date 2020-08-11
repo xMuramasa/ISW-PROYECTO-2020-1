@@ -49,9 +49,14 @@ public class recuperacionController {
         return servicio.borrar(recuperacionId);
     }
 
-    @GetMapping("/getAllRecuperacion{recuperacionId}")
+    @GetMapping("/getAllRecuperacion/{recuperacionId}")
     public List<recuperacion> obtenerByrecuperacion(@PathVariable("recuperacionId") int recuperacionId) {
         return servicio.obtenerByrecuperacionId(recuperacionId);
+    }
+
+    @GetMapping("/getAllRecuperacion")
+    public List<recuperacion> getAllRecuperacionl() {
+        return servicio.obtenerAll();
     }
 
 }
