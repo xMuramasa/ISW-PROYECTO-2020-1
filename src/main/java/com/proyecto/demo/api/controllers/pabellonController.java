@@ -36,9 +36,9 @@ public class pabellonController {
     @Qualifier("servicepabellon")
     pabellonService servicio;
 
-    @GetMapping("/{id]")
+    @GetMapping("/{id}")
     public pabellon obtenerpabellon(@PathVariable("id") int id) {
-        return servicio.obtenerporpabellonId(id);
+        return servicio.obtenerporId(id);
     }
 
     @PostMapping("/")

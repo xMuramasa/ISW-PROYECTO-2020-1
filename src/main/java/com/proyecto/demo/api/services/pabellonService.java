@@ -46,7 +46,7 @@ public class pabellonService{
         }
     }
 
-    public pabellon obtenerporpabellonId(int pabellonId){
+    public pabellon obtenerporId(int pabellonId){
         return repositorio.findBypabellonId(pabellonId);
     }
 
