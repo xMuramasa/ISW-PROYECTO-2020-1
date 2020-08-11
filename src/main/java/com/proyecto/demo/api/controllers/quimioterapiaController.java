@@ -55,7 +55,7 @@ public class quimioterapiaController {
         return servicio.obtenerByquimioterapiaId(quimioterapiaId);
     }
 
-    @GetMapping("/getAllQuimioterapia")
+    @GetMapping("/getAllQuimioterapia/todos")
     public List<quimioterapia> getAllQuimioterapia() {
         return servicio.obtenerAll();
     }

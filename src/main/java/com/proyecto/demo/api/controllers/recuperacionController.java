@@ -54,7 +54,7 @@ public class recuperacionController {
         return servicio.obtenerByrecuperacionId(recuperacionId);
     }
 
-    @GetMapping("/getAllRecuperacion")
+    @GetMapping("/getAllRecuperacion/todos")
     public List<recuperacion> getAllRecuperacionl() {
         return servicio.obtenerAll();
     }
