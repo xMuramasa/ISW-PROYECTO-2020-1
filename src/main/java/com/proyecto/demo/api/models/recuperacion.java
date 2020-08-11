@@ -12,8 +12,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class recuperacion {
     @Id
-    @GenericGenerator(name = "incrementrelpab", strategy = "increment")
-    @GeneratedValue(generator = "incrementrelpab")
+    @GenericGenerator(name = "incrementrelrec", strategy = "increment")
+    @GeneratedValue(generator = "incrementrelrec")
     @Column(name = "id")
     int id;
 

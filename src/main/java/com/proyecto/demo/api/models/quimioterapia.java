@@ -8,12 +8,12 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name = "Pabellon")
+@Table(name = "quimioterapia")
 @Entity
 public class quimioterapia {
     @Id
-    @GenericGenerator(name = "incrementrelpab", strategy = "increment")
-    @GeneratedValue(generator = "incrementrelpab")
+    @GenericGenerator(name = "incrementrelquimio", strategy = "increment")
+    @GeneratedValue(generator = "incrementrelquimio")
     @Column(name = "id")
     int id;
 
